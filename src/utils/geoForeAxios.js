@@ -9,7 +9,7 @@ const fetchWeather = async (latitude, longitude, callback) => {
         if (data.error) {
             callback('Unable to find location.');
         } else {
-            callback(undefined, `${data.current.weather_descriptions[0]}. It is currently ${data.current.temperature} degress out. It feels like ${data.current.feelslike} degres out.`);
+            callback(undefined, `${data.current.weather_descriptions[0]}. It is currently ${data.current.temperature} degress out. It feels like ${data.current.feelslike} degres out. The Humidity is ${data.current.humidity}%`);
         }
         
     } catch (error) {
