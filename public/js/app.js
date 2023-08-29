@@ -30,27 +30,40 @@ const messageOne = document.querySelector('#message-1')
 const messageTwo = document.querySelector('#message-2')
 
 
-weatherForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    messageOne.textContent = 'Loading...'
-    messageTwo.textContent = ''
+weatherForm.addEventListener('submit', async (e) => {
+    try {
+        
+        e.preventDefault();
+        messageOne.textContent = 'Loading...'
+        messageTwo.textContent = ''
 
-    const location = search.value
+        const location = search.value
 
-    fetch(`http://localhost:3000/weather?address=${location}`)
-        .then((response) => {
-            response.json().then((data) => {
+        // fetch(`http://localhost:3000/weather?address=${location}`)
+        //     .then((response) => {
+        //         response.json().then((data) => {
 
-                if (data.error) {
-                    messageOne.innerText = data.error
-                } else {
-                    messageOne.textContent = data.location
-                    messageTwo.textContent = data.forecast
-                }
+        //             if (data.error) {
+        //                 messageOne.innerText = data.error
+        //             } else {
+        //                 messageOne.textContent = data.location
+        //                 messageTwo.textContent = data.forecast
+        //             }
 
-            })
-        })
+        //         })
+        //     })
+        const response = await fetch(`http://localhost:3000/weather?address=${location}`);
+        const data = await response.json();
+        if (data.error) {
+            messageOne.innerText = data.error
+        } else {
+            messageOne.textContent = data.location
+            messageTwo.textContent = data.forecast
+        }
 
-
-    // console.log(location);
+    } catch (error) {
+        
+        messageOne.innerText = error
+    
+    }
 })
