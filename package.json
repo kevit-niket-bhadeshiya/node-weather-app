@@ -9,9 +9,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start" : "node src/app.js"
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js -e js,hbs"
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
