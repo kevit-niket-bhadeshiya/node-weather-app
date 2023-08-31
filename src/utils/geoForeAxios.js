@@ -27,7 +27,7 @@ const fetchGeocoding = async (location, callback) => {
     try {
         const { data } = await axios.get(geocodeURL)
         
-        if(data.features.length){
+        if(!data.features.length){
             callback('Unable to find location. Try another search.!');
         } else {
             callback(undefined, {
