@@ -80,3 +80,7 @@ button:hover {
     background-color: white;
     color : #333333
 }
+
+#myForecast{
+    margin: 20px 0;
+}

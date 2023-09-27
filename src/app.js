@@ -75,6 +75,24 @@ app.get('/weather', (req, res) => {
     })
 })
 
+app.get('/weatherByItself', (req, res) => {
+    if(!req.query.latitude || !req.query.longitude) {
+        return res.send({
+            error: 'You must proovide an latitude and longitude'
+        })
+    }
+
+    geoForecast.fetchWeather(req.query.latitude, req.query.longitude, (error,  forecastData = undefined) => {
+        if(error) {
+            return res.send({ error })
+        }
+
+        res.send({
+            forecast: forecastData,
+        })
+    })
+})
+
 
 app.get('/help/*', (req, res) => {
     res.render('404.hbs', {
