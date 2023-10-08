@@ -13,10 +13,40 @@
     <div class="main-content">
         {{>header}}
 
-        <p>{{ msg }}</p>
+        <section class="help-section">
+            <h1>Welcome to the Weather App Help Center</h1>
+        </section>
+
+        <section class="help-section">
+            <h2>Frequently Asked Questions (FAQs)</h2>
+            <ul>
+                <li>
+                    <h3>How do I search for weather information?</h3>
+                    <p>To search for weather information, simply enter the location you want to know the weather for in
+                        the search bar and press 'Search.'</p>
+                </li>
+                <li>
+                    <h3>I'm getting an 'Invalid location' error. What should I do?</h3>
+                    <p>If you receive this error, please double-check the spelling of the location and try again. Ensure
+                        that you've entered both the city name and country.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="help-section">
+            <h2>Search Tips</h2>
+            <p>For accurate results, try entering the city name and country when searching for weather information.</p>
+        </section>
+
+        <section class="help-section">
+            <h2>Contact Information</h2>
+            <p>If you need further assistance, please don't hesitate to contact us:</p>
+            <p>Email: <a href="mailto:bniket.7@gmail.com">bniket.7@gmail.com</a></p>
+
+        </section>
 
     </div>
-        {{>footer}}
+    {{>footer}}
 
 </body>
 
